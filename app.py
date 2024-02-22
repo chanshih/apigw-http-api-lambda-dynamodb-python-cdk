@@ -4,8 +4,8 @@ SPDX-License-Identifier: MIT-0
 '''
 
 import aws_cdk as cdk
-from stacks.apigw_http_api_lambda_dynamodb_python_cdk_stack import ApigwHttpApiLambdaDynamodbPythonCdkStack
+from stacks.pipeline_stack import PipelineStack
 
 app = cdk.App()
-ApigwHttpApiLambdaDynamodbPythonCdkStack(app, "ApigwHttpApiLambdaDynamodbPythonCdkStack")
+PipelineStack(app, "ApigwHttpApiLambdaDynamodbPythonCdkStack-PipelineStack")
 app.synth()

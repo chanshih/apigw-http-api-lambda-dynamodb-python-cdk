@@ -59,13 +59,14 @@ class ApigwHttpApiLambdaDynamodbPythonCdkStack(Stack):
         )
 
         # Create DynamoDb Table
-        demo_table = dynamodb_.Table(
-            self,
-            TABLE_NAME,
-            partition_key=dynamodb_.Attribute(
-                name="id", type=dynamodb_.AttributeType.STRING
-            ),
-        )
+        demo_table = dynamodb_.Table.fromTableArn(self, TABLE_NAME, "tablearn")
+        #demo_table = dynamodb_.Table(
+         #   self,
+          #  TABLE_NAME,
+           # partition_key=dynamodb_.Attribute(
+            #    name="id", type=dynamodb_.AttributeType.STRING
+        #    ),
+        #)
 
         # Create the Lambda function to receive the request
         api_hanlder = lambda_.Function(
