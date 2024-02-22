@@ -3,7 +3,7 @@ from aws_cdk import (
     Stage,
     Tags
 )
-from .stack import ApigwHttpApiLambdaDynamodbPythonCdkStack
+from stacks.apigw_http_api_lambda_dynamodb_python_cdk_stack import ApigwHttpApiLambdaDynamodbPythonCdkStack
 
 class PipelineStage(Stage):
 

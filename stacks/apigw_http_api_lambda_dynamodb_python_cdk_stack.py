@@ -17,7 +17,7 @@ TABLE_NAME = "demo_table"
 
 
 class ApigwHttpApiLambdaDynamodbPythonCdkStack(Stack):
-    def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
+    def __init__(self, scope: Construct, construct_id: str,stage, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
         # VPC
@@ -59,7 +59,8 @@ class ApigwHttpApiLambdaDynamodbPythonCdkStack(Stack):
         )
 
         # Create DynamoDb Table
-        demo_table = dynamodb_.Table.fromTableArn(self, TABLE_NAME, "tablearn")
+        
+        demo_table = dynamodb_.Table.from_table_arn(self, TABLE_NAME, "arn:aws:dynamodb:ap-southeast-2:381895544333:table/ApigwHttpApiLambdaDynamodbPythonCdkStack-demotable002BE91A-VDPJ2NPCGS66")
         #demo_table = dynamodb_.Table(
          #   self,
           #  TABLE_NAME,
