@@ -61,7 +61,7 @@ class ApigwHttpApiLambdaDynamodbPythonCdkStack(Stack):
         # Create DynamoDb Tablee
         #account=os.environ["CDK_DEFAULT_ACCOUNT"]
         #region=os.environ["CDK_DEFAULT_REGION"]
-        account="690155231179"
+        account="381895544333"
         region="ap-southeast-2"
         
         dbName='ApigwHttpApiLambdaDynamodbPythonCdkStack-demotable002BE91A-VDPJ2NPCGS66'
