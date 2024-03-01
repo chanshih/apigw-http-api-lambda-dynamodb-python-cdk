@@ -59,9 +59,11 @@ class ApigwHttpApiLambdaDynamodbPythonCdkStack(Stack):
         )
 
         # Create DynamoDb Table
-        account=os.environ["CDK_DEFAULT_ACCOUNT"]
-        region=os.environ["CDK_DEFAULT_REGION"]
-        #dbName=os.environ["dbName"] 
+        #account=os.environ["CDK_DEFAULT_ACCOUNT"]
+        #region=os.environ["CDK_DEFAULT_REGION"]
+        account="690155231179"
+        region="ap-southeast-2"
+        
         dbName='ApigwHttpApiLambdaDynamodbPythonCdkStack-demotable002BE91A-VDPJ2NPCGS66'
         table_arn = f"arn:aws:dynamodb:{region}:{account}:table/{dbName}"
         demo_table = dynamodb_.Table.from_table_arn(self, TABLE_NAME, table_arn)
