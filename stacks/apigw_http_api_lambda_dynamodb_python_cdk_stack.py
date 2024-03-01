@@ -58,7 +58,7 @@ class ApigwHttpApiLambdaDynamodbPythonCdkStack(Stack):
             )
         )
 
-        # Create DynamoDb Table
+        # Create DynamoDb Tablee
         #account=os.environ["CDK_DEFAULT_ACCOUNT"]
         #region=os.environ["CDK_DEFAULT_REGION"]
         account="690155231179"
