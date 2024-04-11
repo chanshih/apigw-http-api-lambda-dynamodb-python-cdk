@@ -8,16 +8,9 @@ from stacks.pipeline_stage import PipelineStage
 
 class PipelineStack(Stack):
     
-<<<<<<< HEAD
-    def __init__(self, scope: Construct, id: str, **kwargs) -> None:
-        super().__init__(scope, id, **kwargs)
-        
-        #for github
-=======
     def __init__(self, scope: Construct, id: str,env=None, **kwargs) -> None:
         super().__init__(scope, id,env=env, **kwargs)
-        #for gitlab
->>>>>>> 81b6e2b249e46e0ecde34451c067131a42d7d316
+
         pipeline = pipelines.CodePipeline(self, "Pipeline",
             cross_account_keys=True,
             synth=pipelines.ShellStep(
