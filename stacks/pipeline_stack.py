@@ -9,7 +9,8 @@ class PipelineStack(Stack):
     
     def __init__(self, scope: Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
-        #for gitlab
+        
+        #for github
         pipeline = pipelines.CodePipeline(self, "Pipeline",
             synth=pipelines.ShellStep(
                 "Synth",
