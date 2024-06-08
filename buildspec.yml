@@ -8,6 +8,7 @@ phases:
       - echo "Installing dependencies..."
       - pip install -r requirements.txt
       - pip install aws-cdk-lib
+      - npm install aws-cdk -g
   pre_build:
     commands:
       - echo "Synth started on `date`"
