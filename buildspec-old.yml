@@ -6,15 +6,16 @@ phases:
       python: 3.9
     commands:
       - echo "Installing dependencies..."
-      - npm install -g aws-cdk
       - pip install -r requirements.txt
+      - pip install aws-cdk-lib
+      - npm install aws-cdk -g
   pre_build:
     commands:
       - echo "Synth started on `date`"
   build:
     commands:
       - echo "Synthesizing CDK app..."
-      - npx cdk synth
+      - cdk synth
 artifacts:
   base-directory: cdk.out
   files:
