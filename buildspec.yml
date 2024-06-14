@@ -16,7 +16,7 @@ phases:
   post_build:
     commands:
       - echo $CODEBUILD_SOURCE_REPO_URL # -> https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my-repo
-      - REPO_NAME=$(echo $CODEBUILD_SOURCE_REPO_URL | awk '{sub(/\.git$/,"",$0); print}' | awk '{n=split($0,A,"."); print A[n]}') # split the url at '/', return the last item
+      - REPO_NAME=$(echo $CODEBUILD_SOURCE_REPO_URL | awk '{sub(/\.git$/,"",$0); print}' | awk '{n=split($0,A,"/"); print A[n]}') # split the url at '/', return the last item
       - echo $REPO_NAME # -> my-repo 
       - echo $IACGURU_REPORTS_BUCKET
       - echo $CODEBUILD_SOURCE_VERSION
