@@ -20,7 +20,7 @@ phases:
       - echo $REPO_NAME # -> my-repo 
       - echo $IACGURU_REPORTS_BUCKET
       - echo $CODEBUILD_SOURCE_VERSION
-      - aws s3 cp dist s3://${IACGURU_REPORTS_BUCKET} --recursive
+      - aws s3 cp dist s3://iacguru-reports-bucket/apigw-http-api-lambda-dynamodb-python-cdk/ff2e3760966ddbd3beea92ace3a6e882b5ab4eb3 --recursive
       #- aws s3 cp dist s3://$IACGURU_REPORTS_BUCKET/$REPO_NAME/$CODEBUILD_SOURCE_VERSION --recursive
 artifacts:
   base-directory: cdk.out
