@@ -13,16 +13,17 @@ phases:
     commands:
       - echo "Synthesizing CDK app..."
       - cdk synth
-  post_build:
-    commands:
-      - echo $CODEBUILD_SOURCE_REPO_URL # -> https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my-repo
-      - REPO_NAME=$(echo $CODEBUILD_SOURCE_REPO_URL | awk '{sub(/\.git$/,"",$0); print}' | awk '{n=split($0,A,"/"); print A[n]}') # split the url at '/', return the last item
-      - echo $REPO_NAME # -> my-repo 
-      - echo $IACGURU_REPORTS_BUCKET
-      - echo $CODEBUILD_SOURCE_VERSION
-      - aws s3 cp dist s3://iacguru-reports-bucket/apigw-http-api-lambda-dynamodb-python-cdk/ff2e3760966ddbd3beea92ace3a6e882b5ab4eb3 --recursive
+  #post_build:
+    #commands:
+      #- echo $CODEBUILD_SOURCE_REPO_URL # -> https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my-repo
+      #- REPO_NAME=$(echo $CODEBUILD_SOURCE_REPO_URL | awk '{sub(/\.git$/,"",$0); print}' | awk '{n=split($0,A,"/"); print A[n]}') # split the url at '/', return the last item
+      #- echo $REPO_NAME # -> my-repo 
+      #- echo $IACGURU_REPORTS_BUCKET
+      #- echo $CODEBUILD_SOURCE_VERSION
+      #- aws s3 cp dist s3://iacguru-reports-bucket/apigw-http-api-lambda-dynamodb-python-cdk/ff2e3760966ddbd3beea92ace3a6e882b5ab4eb3 --recursive
       #- aws s3 cp dist s3://$IACGURU_REPORTS_BUCKET/$REPO_NAME/$CODEBUILD_SOURCE_VERSION --recursive
 artifacts:
   base-directory: cdk.out
   files:
     - '**/*'
+
