@@ -12,8 +12,8 @@ phases:
       - echo $CODEBUILD_SOURCE_REPO_URL # -> https://git-codecommit.us-east-1.amazonaws.com/v1/repos/my-repo
       - REPO_NAME=$(echo $CODEBUILD_SOURCE_REPO_URL | awk -F\"/\" '{print $NF}') # split the url at '/', return the last item
       - echo $REPO_NAME # -> my-repo 
-      - echo IACGURU_REPORTS_BUCKET
-      - echo CODEBUILD_SOURCE_VERSION
+      - echo $IACGURU_REPORTS_BUCKET
+      - echo $CODEBUILD_SOURCE_VERSION
       - aws s3 cp dist s3://${IACGURU_REPORTS_BUCKET}/${REPO_NAME}/${CODEBUILD_SOURCE_VERSION} --recursive
   build:
     commands:
